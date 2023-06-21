@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galary-Creater App</title>
+    <style>
+        img{
+            max-width: 20%;
+            max-height: 20%;
+        }
+        body{
+            background-color: rgb(236, 86, 236);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Album-Creater</h1>
+    <input type="text"id="myinput"placeholder='Enter Image URL'>
+    <button id="btn">Add Image</button>
+    <div id="myalbum"></div>
+    <script>
+        const addinput=document.getElementById('myinput');
+        const addbtn=document.getElementById('btn');
+        const addalbum=document.getElementById('myalbum');
+
+
+      addbtn.addEventListener('click',function(){
+        const urltext=addinput.value;
+        if(urltext) {
+          let galary=document.createElement('img') ;
+          galary.src=urltext;
+          myalbum.appendChild(galary);
+
+        const deltbtn=document.createElement('button');
+        deltbtn.textContent=' Delete'
+
+        deltbtn.addEventListener('click',function(){
+            galary.remove();
+            deltbtn.remove()
+        })
+          myalbum.appendChild(deltbtn);
+
+         myalbum.appendChild(galary)
+         addinput.value=' '
+    
+        }
+        
+      })
+
+
+    </script>
+</body>
+</html>
